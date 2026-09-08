@@ -101,6 +101,6 @@ while true; do
 }
 EOF
 
-    mv "$TMP_FILE" "$OUT_FILE"
+    mv "$TMP_FILE" "$LOG_FILE"
 
 done
