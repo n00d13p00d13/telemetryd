@@ -75,7 +75,6 @@ for i in {1..3}; do
     sudo mkdir -p /var/www/telemetry 
     sudo chown -R www-data:www-data /var/www/telemetry 
 
-    # FIX: Matched the file name you scp-ed (telemetryd.nginx)
     sudo mv /tmp/telemetryd.nginx /etc/nginx/sites-available/telemetry 
     sudo ln -sf /etc/nginx/sites-available/telemetry /etc/nginx/sites-enabled/default 
 
