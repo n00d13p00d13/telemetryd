@@ -11,6 +11,8 @@ This a personal project aimed at learning proxmox and implementing a production-
 **What I learned**: manually installing the vm through the ISO took alot of time, I didn't have all my dependencies available and had to hunt for dependencies.
 On average this would take me ~15 mins.
 
+---
+
 **Phase 2** Writing a deployment script:
 - Creating a clean debian 12 vm with dependencies ready and convert it into a Proxmox template using the GUI.
 - Using the host shell, write a deployment script.
