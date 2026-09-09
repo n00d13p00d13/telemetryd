@@ -1,4 +1,6 @@
 # telemetryd
+lightweight system daemon for Proxmox VMs
+--
 This a personal project aimed at learning proxmox and implementing a production-grade infrastructure pipeline through setting up a simple telemetry daemon service in a debian 12 VM environment.
 
 ---
