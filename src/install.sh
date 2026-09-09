@@ -82,5 +82,5 @@ for i in {1..3}; do
     sudo systemctl enable --now telemetryd.service 
     sudo systemctl reload nginx'
 
-    echo "VM ${newid[$i]} successfully deployed."
+    echo "VM ${new_id[$i]} successfully deployed."
 done
