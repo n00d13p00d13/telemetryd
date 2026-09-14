@@ -32,3 +32,6 @@ Although writing the deployment script was a very manual process, and I had to e
 - Define the three VMs, CPU and RAM limits, networking in code.
 
 **Goal**: Learn how to write declarative state files and manage states, rather than describe how to write the system describe what the end result should be like.
+
+**What I learned**: a declarative approach definitely made things alot easier, it's alot faster than writing iterative shell scripts.
+Next step would be to completely dump the `debtest-template` VM template and generate one using terraform and ansible too.
