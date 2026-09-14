@@ -35,3 +35,10 @@ Although writing the deployment script was a very manual process, and I had to e
 
 **What I learned**: a declarative approach definitely made things alot easier, it's alot faster than writing iterative shell scripts.
 Next step would be to completely dump the `debtest-template` VM template and generate one using terraform and ansible too.
+
+---
+**Phase 4** Configuration Management + IaC (Ansible and Terraform)
+- Dump `debtest-template` and create the template during deployment with Terraform and Ansible.
+- Write an Ansible inventory file and yaml playbooks that connect via SSH to update packages and deploy the daemon script.
+
+**Goal**: Employ provisioning and configuration management tools side by side.

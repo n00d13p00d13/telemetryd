@@ -1,17 +1,3 @@
-provider "proxmox" {
-  endpoint = var.pve_endpoint
-  api_token = var.pve_api_token
-  insecure = true
-}
-
-data "proxmox_virtual_environment_vms" "debtest_template" {
-  node_name = var.pve_node_name
-  filter {
-    name = "name"
-    values = ["debtesttemplate"]
-  }
-}
-
 # using proxmox_virtual_environment_vm instead of proxmox_cloned_vm
 # for simple configuration purposes
 resource "proxmox_virtual_environment_vm" "debtest_clone" {
@@ -20,7 +6,7 @@ resource "proxmox_virtual_environment_vm" "debtest_clone" {
   node_name = var.pve_node_name
 
   clone {
-    vm_id = data.proxmox_virtual_environment_vms.debtest_template.vms[0].vm_id
+    vm_id = proxmox_virtual_environment_vm.debian_template.vm_id
     datastore_id = var.pve_datastore_id
   }
 
@@ -39,12 +25,14 @@ resource "proxmox_virtual_environment_vm" "debtest_clone" {
 
   initialization {
     datastore_id = var.pve_datastore_id
+    user_data_file_id = proxmox_virtual_environment_file.debian_user_cloud_config.id
+
     dns {
       servers = ["192.168.1.111"]
     }
     ip_config {
       ipv4 {
-        address = "192.168.1.12${count.index + 1}/23"
+        address = "192.168.1.${121 + count.index}/23"
         gateway = "192.168.1.1"
       }
       ipv6 {
