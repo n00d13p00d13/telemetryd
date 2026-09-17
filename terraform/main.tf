@@ -43,6 +43,11 @@ resource "proxmox_virtual_environment_vm" "debtest_clone" {
 
 }
 
+resource "local_file" "ansible_inventory" {
+  filename = pathexpand("../ansible/inventory.ini")
+  content = 
+}
+
 output "vm_ids" {
   value = proxmox_virtual_environment_vm.debtest_clone[*].vm_id
 }
